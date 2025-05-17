@@ -100,15 +100,9 @@
   </header>
 
   <main>
-    <!-- 这里修改你的公司名字 -->
-    <h1 id="company-name">Fazio Enterprise</h1>
-
-    <!-- 继续聊天按钮 -->
+    <h1 id="company-name">Malaysia investment development authority</h1>
     <button class="chat-btn" id="continue-chat-btn">Continue to Chat</button>
-
-    <!-- 显示链接文字 -->
-    <p class="link-text" id="link-text">Link: https://fb.me/8oyjnxdkO Hello! Can I get more info on this?</p>
-
+    <p class="link-text" id="link-text">Link: https://wa.me/60177846693?text=Hello! Can I get more info on this?</p>
     <p style="margin-top: 40px; color: #555;">
       Don't have WhatsApp yet? <a href="#" onclick="downloadWhatsApp()">Download</a>
     </p>
@@ -150,29 +144,26 @@
   </footer>
 
   <script>
-    // 这里修改你的WhatsApp电话号码，格式示例：'1234567890'
-    const whatsappNumber = '60177846693'; 
+    // ✅ 正确格式，不包含 https://
+    const whatsappNumber = '60177846693';
 
-    // 这里修改联系人名字
+    // 联系人名字
     const contactName = 'Malaysia investment development authority';
 
-    // 页面元素
     const companyNameElem = document.getElementById('company-name');
     const continueChatBtn = document.getElementById('continue-chat-btn');
     const linkTextElem = document.getElementById('link-text');
 
-    // 初始化页面内容
+    // 初始化
     companyNameElem.textContent = contactName;
-    linkTextElem.textContent = `Link: https://fb.me/8oyjnxdkO Hello! Can I get more info on this?`;
+    linkTextElem.textContent = `Link: https://wa.me/${whatsappNumber}?text=Hello! Can I get more info on this?`;
 
-    // 点击“Continue to Chat”跳转到WhatsApp聊天链接
+    // 按钮点击跳转
     continueChatBtn.addEventListener('click', () => {
-      // 跳转到 WhatsApp API 链接，自动打开聊天页面
       const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Hello! Can I get more info on this?')}`;
       window.location.href = url;
     });
 
-    // 下载按钮功能
     function downloadWhatsApp() {
       window.open('https://www.whatsapp.com/download', '_blank');
     }
